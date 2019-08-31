@@ -1,0 +1,21 @@
+ systemctl start mysqld                  //启动mysql服务
+ systemctl enable mysqld                 //设置开机自启
+  systemctl status mysqld                 //查看mysql服务状态
+grep 'password' /var/log/mysqld.log    //查看初始密码
+mysql -u root -p'mtoa>Av<p6Yk'       //初始密码登录
+mysql>     set global validate_password_policy=0;      //只验证长度
+           set global validate_password_length=6；     //修改密码长度,默认值是8个字符
+           alter user root@”localhost”  identified by "tarena";  //修改登陆密码
+           (alter user user() identified by "123456";)
+   
+数据库基本管理
+
+练习库管理命令（查看、删除、创建库、切换）
+             show    drop                               
+练习表管理命令（查看、删除、创建表）
+
+练习记录管理命令（插入、查看、修改、删除）
+
+
+默认情况下，msyql命令会连接本机的MySQL服务。但在需要的时候，可以通过 -h 选项指定远程主机
+mysql -h 127.0.0.1 –u root –p
